@@ -1,6 +1,22 @@
-my_string = input("Сколько символов? ")
-print(len(my_string))
-print(my_string .upper()) # print(my_string .lower())
-print("hi man! how are you?" .replace(" " , ""))
-print("hi man! how are you?" .replace("hi man! how are you?", "h"))
-print("hi man! how are you?" .replace("hi man! how are you?", "?"))
+calls = 0
+def count_calls():
+    global calls
+    calls = calls + 1
+
+def string_info(string):
+    count_calls()
+    return len(string), string.lower(), string.upper()
+
+def is_contains(string, spisok):
+    count_calls()
+    for el in spisok:
+        if string.lower() == el.lower():
+            return True
+    return False
+]
+
+print(string_info('Capybara'))
+print(string_info('Armageddon'))
+print(is_contains('Urban', ['ban', 'BaNaN', 'urBAN'])) # Urban ~ urBAN
+print(is_contains('cycle', ['recycling', 'cyclic'])) # No matches
+print(calls)
